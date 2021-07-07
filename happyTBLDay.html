@@ -2,76 +2,247 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生日禮物大作戰</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生日禮物大作戰</title>
+  <!-- <script src="sweetAlert/sweetalert/sweetalert.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/9.9.0/sweetalert2.all.js"
+    integrity="sha512-x24UyRDKCjcnqwrSaxX0BFvzgb/f3WvMEP9CAuIr2GphwDhz8hS9RGxTRJTl998B6GaVLUuaXURjGXyECJEh0w=="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <script>
 
-        const yourBirth = prompt("我們準備了禮物要送給天選之人，輸入你的生日吧(格式:西元年/月月/日日)");
-        yourBirth;
-        if ("1995/07/26" == yourBirth || "19950726" == yourBirth || "1995726" == yourBirth) {
-            const itsme = alert("看來你就是傳說中的一秒惹人生氣依婷呢");
-            itsme;
-            alert("只有闖關成功才能拿到禮物，準備好就開始啦");
-            const qOne = prompt("聽說你是防彈少年團的粉絲，那防彈少年團的粉絲名字是甚麼?","")
-            qOne;
-            console.log(qOne);
-            if("A.R.M.Y" == qOne || "阿米" == qOne || "army" == qOne){
-                alert("這還只是暖身題，不要高興得太早");
-                const qTwo = prompt("成員金碩珍的生日數字相加是多少(例:2+0+2+1+0+7+2+6=20，輸入20)")
-                qTwo;
-                if("28" == qTwo){
-                    alert("不錯嘛!");
-                    const qThree = confirm("小屎丸的真正名字"); //shooky
-                    if(qThree == true){
-                       alert("很棒!暖身結束，接下來才是真正的考驗"); 
-                       const qFour = confirm("紫愛你是哪個成員說出的新創詞"); //金泰亨
-                       qFour;
-                       if(qFour == true){
-                           alert("哦!有點厲害喔");
-                           const qFive = confirm("防彈演唱會必備的手燈名字是?"); //阿米棒vs阿米燈
-                           qFive;
-                           if(qFive == true){
-                               alert("沒想到你居然可以答到這裡!還有兩題請加油!") //阿米棒
-                               const qSix = prompt("防彈的出道日是(格式範例:2021/07/26)")
-                               qSix;
-                               if("2013/06/13" == qSix){
-                                   alert("禮物就近在眼前了")
-                                   const qSeven = confirm("你喜歡的金碩珍solo曲收錄在哪一張專輯中");
-                                   qSeven;
-                                   if(qSeven == true){
-                                       alert("恭喜你!認證你是阿米，請領取你的生日禮物吧!"); //BTS LOVE YOURSELF 結 `Answer`
-                                   }else{
-                                       alert("看來你還是沒有獲得禮物的資格呢QQ"); //MAP OF THE SOUL : 7 
-                                   }
-                               }else{
-                                   alert("居然會在這題失手，哎呀呀呀呀");
-                               }
-                           }else{
-                               alert("哎呀真是太可惜了，都到這裡了呢，可是人生是沒有重來的機會的QQ") //阿米燈
-                           }
-                       }else{
-                           alert("吃了那麼多麥當勞居然還不知道!!") //閔玧其
-                       }
-                    }else{
-                        alert("真可惜啊，連暖身題都沒有通過");
-                    }
-                }else{
-                    alert("你是數學不好還是不知道人家生日呢");
-                }
-            }else{
-                alert("錯!看來你還不是真的粉絲呢^^")
-            }
+
+
+  <script>
+    // 確認身分
+    function gameplay() {
+      Swal.fire({
+        title: '我們準備了禮物要送給天選之人，輸入你的生日吧',
+        text: '格式:西元年/月月/日日',
+        input: 'text',
+        inputValue: '',
+        showLoaderOnConfirm: true
+      }).then(function (result) {
+        if (result.value == "1995/07/26" || result.value == "1995/7/26" || result.value == "19950726" || result.value == "1995726") {
+          Swal.fire('看來你就是傳說中的一秒惹人生氣依婷呢')
+            .then(start); //往start函式前進
         } else {
-            alert("OOPS!你不是我們在找的人");
+          Swal.fire('你不是我們在找的人')
         }
+      });
+    }
+    gameplay();
 
-       
-    </script>
+    //7題小遊戲
+    function start() {
+      let misson;
+      Swal.fire({
+        title: '只有闖關成功才能拿到禮物，準備好就開始啦',
+        confirmButtonText: '放馬過來',
+        imageUrl: 'https://fakeimg.pl/300x300/#333',
+        imageHieght: 300,
+        comfirmButtonColor: '#3085d6',
+      })
+
+        //第1題
+        .then(function () {
+          Swal.fire({
+            title: '聽說你是防彈少年團的粉絲，那防彈少年團的粉絲名字是甚麼?',
+            input: 'text',
+            inputValue: '',
+            showLoaderOnConfirm: true
+          }).then(function (result) {
+            if (result.value == "A.R.M.Y" || result.value == "ARMY" || result.value == "阿米" || result.value == "army" || result.value == "a.r.m.y") {
+              Swal.fire(
+                {
+                  title: '正確',
+                  text: '這只是暖身題不要高興得太早',
+                  imageUrl: 'https://fakeimg.pl/300x300/#333',
+                  imageHieght: 300,
+                })
+                //第2題
+                .then(function () {
+                  Swal.fire({
+                    title: '成員金碩珍的生日數字相加是多少?',
+                    text: '例:20210726=>2+0+2+1+0+7+2+6=20 輸入20',
+                    input: 'text',
+                    inputValue: '',
+                    showLoaderOnConfirm: true
+                  })
+                    .then(function (result) {
+                      if (result.value == '28' || result.value == '二十八' || result.value == '二八') {
+                        Swal.fire({
+                          title: '正確',
+                          text: '不錯喔!',
+                          imageUrl: 'https://fakeimg.pl/300x300/#333',
+                          imageHieght: 300,
+                        })
+                          //第3題
+                          .then(function () {
+                            Swal.fire({
+                              title: '圖片中的角色叫甚麼名字?',
+                              imageUrl: './img/0fc65d76d3b6aa8704b3925e20f3b20f.png',
+                              imageHieght: 250,
+                              confirmButtonText: 'shooky', //對
+                              cancelButtonText: 'chookie', //錯
+                              showCancelButton: true, //讓cancel按鈕顯示在畫面上
+                              allowOutsideClick: false,
+                              comfirmButtonColor: '#3085d6',
+                              cancelButtonColor: '#d33'
+                            })
+                              //第3題判斷式
+                              .then(function (result) {
+                                if (result.dismiss === 'cancel') {
+                                  Swal.fire({
+                                    title: '錯!',
+                                    text: '真可惜啊，連暖身題都沒有通過',
+                                    icon: 'error'
+                                  })
+                                } else {
+                                  Swal.fire({
+                                    title: '正確',
+                                    text: '很棒!暖身結束，接下來才是真正的考驗',
+                                    imageUrl: 'https://fakeimg.pl/300x300/#333',
+                                    imageHieght: 300,
+                                  })
+                                    //第4題
+                                    .then(function () {
+                                      Swal.fire({
+                                        title: '紫愛你是哪個成員說出的新創詞',
+                                        confirmButtonText: '閔玧其',
+                                        cancelButtonText: '金泰亨',
+                                        showCancelButton: true,
+                                        comfirmButtonColor: '#3085d6',
+                                        cancelButtonColor: '#d33'
+                                      })
+                                        //第4題判斷式
+                                        .then(function (result) {
+                                          if (result.dismiss !== 'cancel') {
+                                            Swal.fire({
+                                              title: '錯!',
+                                              text: '吃了那麼多麥當勞居然還不知道!!',
+                                              icon: 'error'
+                                            })
+                                          } else {
+                                            Swal.fire({
+                                              title: '正確',
+                                              text: '哦!有點厲害喔',
+                                              imageUrl: 'https://fakeimg.pl/300x300/#333',
+                                              imageHieght: 300,
+                                            })
+                                              //第5題
+                                              .then(function () {
+                                                Swal.fire({
+                                                  title: '防彈演唱會必備的手燈名字是?',
+                                                  confirmButtonText: '阿米燈',
+                                                  cancelButtonText: '阿米棒',
+                                                  showCancelButton: true,
+                                                  comfirmButtonColor: '#3085d6',
+                                                  cancelButtonColor: '#d33'
+                                                })
+                                                  //第5題判斷式
+                                                  .then(function (result) {
+                                                    if (result.dismiss !== 'cancel') {
+                                                      Swal.fire({
+                                                        title: '錯!',
+                                                        text: '哎呀真是太可惜了，都到這裡了呢，可是人生是沒有重來的機會的QQ',
+                                                        icon: 'error'
+                                                      })
+                                                    } else {
+                                                      Swal.fire({
+                                                        title: '正確',
+                                                        text: '沒想到你居然可以答到這裡!還有兩題請加油!',
+                                                        imageUrl: 'https://fakeimg.pl/300x300/#333',
+                                                        imageHieght: 300,
+                                                      })
+                                                        //第6題
+                                                        .then(function () {
+                                                          Swal.fire({
+                                                            title: '防彈的出道日是',
+                                                            text: '格式範例:2021/07/26',
+                                                            input: 'text',
+                                                            inputValue: '',
+                                                            showLoaderOnConfirm: true
+                                                          })
+                                                            //第6題判斷式
+                                                            .then(function (result) {
+                                                              if (result.value == '2013/06/13' || result.value == '20130613') {
+                                                                Swal.fire({
+                                                                  title: '正確',
+                                                                  text: '禮物就近在眼前了',
+                                                                  imageUrl: 'https://fakeimg.pl/300x300/#333',
+                                                                  imageHieght: 300,
+                                                                })
+                                                                  //第7題
+                                                                  .then(function () {
+                                                                    Swal.fire({
+                                                                      title: '你喜歡的金碩珍solo曲收錄在哪一張專輯中',
+                                                                      confirmButtonText: 'MAP OF THE SOUL : 7',
+                                                                      cancelButtonText: 'BTS LOVE YOURSELF 結 `Answer`',
+                                                                      showCancelButton: true,
+                                                                      comfirmButtonColor: '#3085d6',
+                                                                      cancelButtonColor: '#d33'
+                                                                    })
+                                                                      //第7題判斷式
+                                                                      .then(function (result) {
+                                                                        if (result.dismiss === 'cancel') {
+                                                                          Swal.fire({
+                                                                            title: '恭喜!',
+                                                                            text: '認證你是阿米，請領取你的生日禮物吧!',
+                                                                            imageUrl: 'https://fakeimg.pl/300x300/#333',
+                                                                            imageHieght: 300,
+                                                                          })
+                                                                        } else {
+                                                                          Swal.fire({
+                                                                            title: '錯!',
+                                                                            text: '看來你還是沒有辦法得到禮物呢QQ',
+                                                                            icon: 'error'
+                                                                          })
+                                                                        }//第7題else結束
+                                                                      })//第7題判斷式結束
+                                                                  }) //第7題
+                                                              } else {
+                                                                Swal.fire({
+                                                                  title: '錯!',
+                                                                  text: '居然會在這題失手，哎呀呀呀呀',
+                                                                  icon: 'error'
+                                                                })
+                                                              }//第6題else結束
+                                                            })//第6題判斷式結束
+                                                        })//第6題
+                                                    } //第5題判斷式結束
+                                                  }) //第5題判斷式
+                                              }) //第5題
+                                          } //第4題else結束
+                                        }) //第4題判斷式
+                                    }) //第4題
+                                } //第3題else結束
+                              }) //第3題判斷式
+                          }) //第3題
+                      } else {
+                        Swal.fire({
+                          title: '錯!',
+                          text: '你是數學不好還是不知道人家生日呢???',
+                          icon: 'error'
+                        })
+                      } //第2題錯誤
+                    })//第2題判斷式
+                }) //第2題
+            } else {
+              Swal.fire({
+                title: '錯!',
+                text: '看來你還不是真的粉絲呢^^',
+                icon: 'error'
+              })
+            } //第1題錯誤
+          })//第1題判斷式
+        })//第1題  
+    }//start
+  </script>
 </body>
 
 </html>
