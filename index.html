@@ -11,11 +11,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/9.9.0/sweetalert2.all.js"
     integrity="sha512-x24UyRDKCjcnqwrSaxX0BFvzgb/f3WvMEP9CAuIr2GphwDhz8hS9RGxTRJTl998B6GaVLUuaXURjGXyECJEh0w=="
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css.css">
     
 </head>
 
 <body>
 
+<div id="btnSt" onclick="gameplay()">開始挑戰</div>
 
 
   <script>
@@ -36,7 +38,8 @@
         }
       });
     }
-    gameplay();
+
+    // gameplay(); //在這裡執行函式(網頁一載入就會出現)
 
     //7題小遊戲
     function start() {

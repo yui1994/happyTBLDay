@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    height: 100vh;
+    
+}
+
+#btnSt{
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50px,-50px);
+    /* background: rgb(99, 99, 99); */
+    padding: 10px;
+    border: darksalmon solid 5px;
+    border-radius: 10%;
+    color: darksalmon;
+    cursor: pointer;
+}
+
+#btnSt:hover{
+    margin-bottom: 10px;
+}
