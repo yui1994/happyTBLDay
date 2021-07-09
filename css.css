@@ -1,22 +1,36 @@
 body{
     margin: 0;
     height: 100vh;
+    background: url('img/bg01.png');
     
 }
 
 #btnSt{
     position: absolute;
-    bottom: 30%;
+    bottom: 15%;
     left: 50%;
     transform: translate(-50px,-50px);
     /* background: rgb(99, 99, 99); */
-    padding: 10px;
-    border: darksalmon solid 5px;
-    border-radius: 10%;
-    color: darksalmon;
+    padding: 5px;
+    /* border: darksalmon solid 3px; */
+    border: black solid 2px;
+    border-radius: 13%;
+    /* color: darksalmon; */
+    color: black;
+    background: whitesmoke;
     cursor: pointer;
 }
 
 #btnSt:hover{
     margin-bottom: 10px;
+}
+
+.btnTwo{
+    background: whitesmoke;
+    padding: 8px;
+    /* border: darksalmon solid 3px; */
+    border: black solid 2px;
+    border-radius: 10%;
+    /* color: darksalmon; */
+    color: black;
 }
