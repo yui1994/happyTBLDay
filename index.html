@@ -11,13 +11,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/9.9.0/sweetalert2.all.js"
     integrity="sha512-x24UyRDKCjcnqwrSaxX0BFvzgb/f3WvMEP9CAuIr2GphwDhz8hS9RGxTRJTl998B6GaVLUuaXURjGXyECJEh0w=="
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css.css">
-    
+  <link rel="stylesheet" href="css.css">
+
 </head>
 
 <body>
-<img src="./img/TBLday.png" class="wel">
-<span id="btnSt" onclick="gameplay()"><b>開始挑戰</b></span>
+  <img src="./img/TBLday.png" class="wel">
+  <span id="btnSt" onclick="gameplay()"><b>開始挑戰</b></span>
 
 
   <script>
@@ -31,10 +31,17 @@
         showLoaderOnConfirm: true
       }).then(function (result) {
         if (result.value == "1995/07/26" || result.value == "1995/7/26" || result.value == "19950726" || result.value == "1995726") {
-          Swal.fire('看來你就是傳說中的一秒惹人生氣依婷呢')
+          Swal.fire({
+            text: '看來你就是傳說中的一秒惹人生氣依婷呢',
+            imageUrl: './img/wel01.png',
+            imageHeight: 150,
+          })
             .then(start); //往start函式前進
         } else {
-          Swal.fire('你不是我們在找的人')
+          Swal.fire({
+            title: '你不是我們在找的人',
+            icon: "error"
+          })
         }
       });
     }
@@ -45,10 +52,10 @@
     function start() {
       let misson;
       Swal.fire({
-        title: '只有闖關成功才能拿到禮物，準備好就開始啦',
+        text: '只有闖關成功才能拿到禮物，準備好就開始啦',
         confirmButtonText: '放馬過來',
         imageUrl: 'https://fakeimg.pl/300x300/#333',
-        imageHeight: 300,
+        imageHeight: 150,
         comfirmButtonColor: '#3085d6',
       })
 
@@ -65,8 +72,8 @@
                 {
                   title: '正確',
                   text: '這只是暖身題不要高興得太早',
-                  imageUrl: 'https://fakeimg.pl/300x300/#333',
-                  imageHeight: 300,
+                  imageUrl: './img/q1.jpg',
+                  imageHeight: 150,
                 })
                 //第2題
                 .then(function () {
@@ -83,14 +90,14 @@
                           title: '正確',
                           text: '不錯喔!',
                           imageUrl: 'https://fakeimg.pl/300x300/#333',
-                          imageHeight: 300,
+                          imageHeight: 150,
                         })
                           //第3題
                           .then(function () {
                             Swal.fire({
                               title: '圖片中的角色叫甚麼名字?',
                               imageUrl: './img/q3.png',
-                              imageHeight: 250,
+                              imageHeight: 150,
                               confirmButtonText: 'shooky', //對
                               cancelButtonText: 'chookie', //錯
                               showCancelButton: true, //讓cancel按鈕顯示在畫面上
@@ -111,14 +118,14 @@
                                     title: '正確',
                                     text: '很棒!暖身結束，接下來才是真正的考驗',
                                     imageUrl: 'https://fakeimg.pl/300x300/#333',
-                                    imageHeight: 300,
+                                    imageHeight: 150,
                                   })
                                     //第4題
                                     .then(function () {
                                       Swal.fire({
                                         title: '紫愛你是哪個成員說出的新創詞',
-                                        imageUrl: 'https://fakeimg.pl/300x100/#333',
-                                        imageHeight:100,
+                                        imageUrl: 'https://fakeimg.pl/300x300/#333',
+                                        imageHeight: 150,
                                         confirmButtonText: '閔玧其',
                                         cancelButtonText: '金泰亨',
                                         showCancelButton: true,
@@ -138,14 +145,14 @@
                                               title: '正確',
                                               text: '哦!有點厲害喔',
                                               imageUrl: 'https://fakeimg.pl/300x300/#333',
-                                              imageHeight: 300,
+                                              imageHeight: 150,
                                             })
                                               //第5題
                                               .then(function () {
                                                 Swal.fire({
                                                   title: '防彈演唱會必備的手燈名字是?',
                                                   imageUrl: 'https://fakeimg.pl/300x300/#333',
-                                                  imageHeight:300,
+                                                  imageHeight: 150,
                                                   confirmButtonText: '阿米燈',
                                                   cancelButtonText: '阿米棒',
                                                   showCancelButton: true,
@@ -165,7 +172,7 @@
                                                         title: '正確',
                                                         text: '沒想到你居然可以答到這裡!還有兩題請加油!',
                                                         imageUrl: 'https://fakeimg.pl/300x300/#333',
-                                                        imageHeight: 300,
+                                                        imageHeight: 150,
                                                       })
                                                         //第6題
                                                         .then(function () {
@@ -183,14 +190,14 @@
                                                                   title: '正確',
                                                                   text: '禮物就近在眼前了',
                                                                   imageUrl: 'https://fakeimg.pl/300x300/#333',
-                                                                  imageHeight: 300,
+                                                                  imageHeight: 150,
                                                                 })
                                                                   //第7題
                                                                   .then(function () {
                                                                     Swal.fire({
                                                                       title: '你喜歡的金碩珍solo曲收錄在哪一張專輯中',
                                                                       imageUrl: 'https://fakeimg.pl/300x300/#333',
-                                                                      imageHeight:300,
+                                                                      imageHeight: 150,
                                                                       confirmButtonText: 'MAP OF THE SOUL : 7',
                                                                       cancelButtonText: 'BTS LOVE YOURSELF 結 `Answer`',
                                                                       showCancelButton: true,
@@ -204,7 +211,7 @@
                                                                             title: '恭喜!',
                                                                             text: '認證你是阿米，請領取你的生日禮物吧!',
                                                                             imageUrl: 'https://fakeimg.pl/300x300/#333',
-                                                                            imageHeight: 300,
+                                                                            imageHeight: 150,
                                                                           })
                                                                         } else {
                                                                           Swal.fire({
