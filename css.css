@@ -2,35 +2,32 @@ body{
     margin: 0;
     height: 100vh;
     background: url('img/bg01.png');
+    cursor: url('img/chicken.png'), pointer;
     
 }
 
+.wel{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-210px,-50px);
+}
 #btnSt{
     position: absolute;
-    bottom: 15%;
+    bottom: 5%;
     left: 50%;
-    transform: translate(-50px,-50px);
-    /* background: rgb(99, 99, 99); */
+    transform: translate(-205px,-86px);
     padding: 5px;
-    /* border: darksalmon solid 3px; */
-    border: black solid 2px;
-    border-radius: 13%;
-    /* color: darksalmon; */
+    padding-right: 100px;
+    padding-left: 100px;
+    /* border: darksalmon solid 3px; 
+    /* border: black solid 2px; */
+    /* border-radius: 13%; */
+    font-size: 3rem;
     color: black;
-    background: whitesmoke;
-    cursor: pointer;
 }
 
 #btnSt:hover{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.btnTwo{
-    background: whitesmoke;
-    padding: 8px;
-    /* border: darksalmon solid 3px; */
-    border: black solid 2px;
-    border-radius: 10%;
-    /* color: darksalmon; */
-    color: black;
-}
